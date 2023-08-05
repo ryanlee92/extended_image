@@ -199,12 +199,13 @@ void paintExtendedImage(
     if (repeat == ImageRepeat.noRepeat) {
       canvas.drawImageRect(image, sourceRect, destinationRect, paint);
     } else {
-      final ImageTilingInfo info =
-          createTilingInfo(repeat, rect, destinationRect, sourceRect);
-      final ImageShader shader = ImageShader(
-          image, info.tmx, info.tmy, info.transform.storage,
-          filterQuality: filterQuality);
-      canvas.drawRect(rect, paint..shader = shader);
+      // final ImageTilingInfo info =
+      //     createTilingInfo(repeat, rect, destinationRect, sourceRect);
+      // final ImageShader shader = ImageShader(
+      //     image, info.tmx, info.tmy, info.transform.storage,
+      //     filterQuality: filterQuality);
+      // canvas.drawRect(rect, paint..shader = shader);
+      canvas.drawImageRect(image, sourceRect, destinationRect, paint);
     }
   } else {
     canvas.scale(1 / scale);
